@@ -1,6 +1,7 @@
 package com.isidrocorp.projeto.model;
-import javax.persistence.*;
+import java.util.List;
 
+import javax.persistence.*;
 
 @Entity
 @Table(name="tbcliente")
@@ -22,6 +23,13 @@ public class Cliente {
 		
 		@Column(name="telefone")
 		private String telefone;
+		
+		@OneToMany(targetEntity=Conta.class, mappedBy="cliente",cascade=CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Conta> contas;
+
+		public List<Conta> getContas() {
+			return this.contas;
+		}
 
 		public int getCodigo() {
 			return codigo;

@@ -9,7 +9,7 @@ public class HomeView {
 	}
 	
 	public List<String> getEndpoints() {
-		var lista = new ArrayList<String>();
+		List<String> lista = new ArrayList<String>();
 		
 		lista.add("/contas");
 		lista.add("/contas/1");

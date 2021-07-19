@@ -2,6 +2,8 @@ package com.isidrocorp.projeto.model;
 
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name="tbconta")
 public class Conta {
@@ -22,6 +24,7 @@ public class Conta {
 	
 	@ManyToOne
 	@JoinColumn(name="codigo")
+	@JsonIgnore
 	private Cliente cliente;
 
 	public int getNumero() {

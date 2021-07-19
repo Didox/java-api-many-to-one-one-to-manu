@@ -22,7 +22,7 @@ public class ClienteController {
 	
 	@GetMapping("/clientes/{codigo}")
 	public ResponseEntity<Cliente> show(@PathVariable int codigo){
-		var cliente = repo.findById(codigo).orElse(null);
+		Cliente cliente = repo.findById(codigo).orElse(null);
 		return ResponseEntity.ok(cliente);
 	}
 }
